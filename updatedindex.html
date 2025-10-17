@@ -30,33 +30,19 @@
   .category h2{font-size:16px;margin:12px 0 18px;}
 
   /* SEARCH BAR with clear button */
-  .search {
-    position: relative;
-    margin-bottom: 14px;
-  }
+  .search{ position:relative; margin-bottom:14px; }
   .search input{
     width:100%;
-    padding:11px 36px 11px 14px; /* space for the clear button */
+    padding:11px 36px 11px 14px; /* espaço p/ botão clear */
     border-radius:8px;
     border:1px solid rgba(71,69,69,.12);
     font-size:15px;
   }
   .clear-btn{
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    font-size: 18px;
-    color: #888;
-    cursor: pointer;
-    display: none;
-    line-height: 1;
+    position:absolute; right:10px; top:50%; transform:translateY(-50%);
+    background:none; border:none; font-size:18px; color:#888; cursor:pointer; display:none; line-height:1;
   }
-  .clear-btn:hover{
-    color: var(--accent);
-  }
+  .clear-btn:hover{ color:var(--accent); }
 
   .accordion-item{
     background:#faf9f8;
@@ -67,21 +53,15 @@
     transition:transform .12s ease;
   }
   .acc-head{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:14px 16px;
-    cursor:pointer;
-    font-weight:700;
-    user-select:none;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 16px; cursor:pointer; font-weight:700; user-select:none;
   }
   .acc-head:hover{background:rgba(186,156,122,.05);}
   .acc-head .plus{
-    width:32px;height:32px;border-radius:6px;
-    display:flex;align-items:center;justify-content:center;
-    background:var(--base);color:var(--accent);
-    border:1px solid rgba(0,0,0,.06);
-    transition:.18s;
+    width:32px; height:32px; border-radius:6px;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--base); color:var(--accent);
+    border:1px solid rgba(0,0,0,.06); transition:.18s;
   }
   .acc-body{
     padding:12px 16px 18px;
@@ -92,24 +72,17 @@
   .accordion-item.open .plus{background:var(--accent);color:var(--base);}
 
   ul{margin:8px 0 8px 18px;}
+
   .cta{
-    display:inline-block;
-    margin-top:24px;
-    background:var(--accent);
-    color:var(--base);
-    padding:12px 20px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:700;
+    display:inline-block; margin-top:24px;
+    background:var(--accent); color:var(--base);
+    padding:12px 20px; border-radius:8px; text-decoration:none; font-weight:700;
   }
 
-  /* ✨ Branded highlight */
+  /* Branded highlight */
   mark {
-    background: #f4e6d1;
-    color: #3d3d3d;
-    padding: 0 2px;
-    border-radius: 3px;
-    font-weight: 600;
+    background:#f4e6d1; color:#3d3d3d;
+    padding:0 2px; border-radius:3px; font-weight:600;
   }
 
   @media(max-width:700px){
@@ -128,7 +101,126 @@
     <button id="clearBtn" class="clear-btn" aria-label="Clear search">✖</button>
   </div>
 
-  <!-- (Insert all your FAQ categories here as before) -->
+  <!-- GENERAL -->
+  <section class="category" id="general">
+    <h2>General</h2>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">What is the SIMRP Plan?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>The SIMRP Plan is a supplemental benefits program designed to reduce medical costs and add valuable benefits for employees and their families.</p></div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Does this affect my paycheck or take-home pay?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>No. Oftentimes, the employee’s net take-home pay is slightly increased as a result of implementing our plan due to leftover tax savings.</p></div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Was this approved by my employer?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>Yes. Your employer worked diligently to bring this plan to their employees to help reduce medical costs and add valuable benefits for you and your family.</p></div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Am I required to participate?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>No. Participation is voluntary. If you wish to opt out, simply notify your employer.</p></div>
+    </article>
+  </section>
+
+  <!-- COVERAGE & BENEFITS -->
+  <section class="category" id="coverage">
+    <h2>Coverage & Benefits</h2>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">What’s included in the plan?</div><div class="plus">+</div></div>
+      <div class="acc-body">
+        <ul>
+          <li>Virtual Urgent Care – Unlimited</li>
+          <li>Virtual Primary Care – 12 visits per enrolled household member per year</li>
+          <li>Prescription Coverage – Most common prescriptions at no cost (1,000+ covered)</li>
+          <li>Mental Health Counseling – 12 visits per enrolled household member per year</li>
+          <li>Additional wellness resources through the benefits platform</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Potential additional benefits (if tax savings permit)</div><div class="plus">+</div></div>
+      <div class="acc-body">
+        <p>Subject to sufficient tax savings, employees enrolled may receive:</p>
+        <ul>
+          <li>MEC plan offering 3 in-person primary care visits per year*</li>
+          <li>Hospital bill eraser*</li>
+          <li>Group whole life insurance policy to fully subsidize the enrolled employee*</li>
+        </ul>
+        <p><em>*Applied only if enough tax savings are realized.</em></p>
+      </div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">What kind of prescriptions are included?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>Most common prescriptions (1,000+) are covered at no cost. Specialty or brand-only drugs may vary based on availability.</p></div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Will I get an insurance card?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>No insurance card is needed. You’ll access your benefits through the online platform and/or by phone.</p></div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Do I have to use certain doctors or providers?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>No. Virtual services are available nationwide and not limited to a specific network.</p></div>
+    </article>
+  </section>
+
+  <!-- DEPENDENTS & ELIGIBILITY -->
+  <section class="category" id="dependents">
+    <h2>Dependents & Eligibility</h2>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">How many family members can I add?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>You can add up to 6 dependents, including your spouse.</p></div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Can I change my dependents during the year?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>Yes. You can update dependents during open enrollment or after a qualifying life event (marriage, birth, adoption, etc.).</p></div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Can I continue my life insurance policy if I leave the company?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>Yes, you can opt into paying out-of-pocket to continue the policy. Most employees choose to continue due to the cash accrual acting as a savings account.</p></div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">What happens if I leave the company?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>Your coverage under this plan will end when your employment ends, unless your new employer offers a similar program.</p></div>
+    </article>
+  </section>
+
+  <!-- ACCESS & USAGE -->
+  <section class="category" id="usage">
+    <h2>Access & Usage</h2>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Do I need to fill out any forms to get started?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>No complicated paperwork is required. You will be auto-enrolled in our program.</p></div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Can I use these benefits if I move to another state?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>Yes. These benefits are available nationwide and virtual services and prescription coverage are available across the U.S.</p></div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Can I use these benefits while traveling?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>Yes. Virtual visits and prescription coverage are available anywhere in the U.S., even if you’re away from your home state.</p></div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Do I need internet access to use the benefits?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>For virtual services, yes — either internet or a phone connection is needed. For in-person MEC plan visits, internet access is not required.</p></div>
+    </article>
+  </section>
+
+  <!-- LEGAL, PRIVACY & ACCOUNTS -->
+  <section class="category" id="legal">
+    <h2>Legal, Privacy & Accounts</h2>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Will my personal health information be shared with my employer?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>No. Your medical details are confidential and protected under HIPAA. Your employer sees general participation data, not private health records.</p></div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Does this affect my eligibility for HSA or FSA accounts?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>No. This plan works alongside HSAs and FSAs and doesn’t interfere with your contributions or usage. If you have an HSA account, we will ensure you are enrolled properly to avoid disrupting anything.</p></div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Do the benefits expire at the end of the year?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>No. These benefits continue as long as you remain enrolled and your employer keeps the program in place.</p></div>
+    </article>
+  </section>
 
   <a class="cta" href="mailto:support@igbusinessadvisors.com">Contact HR</a>
 </div>
@@ -154,7 +246,6 @@ function clearHighlights(element){
     mark.replaceWith(document.createTextNode(mark.textContent));
   });
 }
-
 function highlightMatches(element, query){
   if(!query) return;
   const walk = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
@@ -162,13 +253,24 @@ function highlightMatches(element, query){
   while(walk.nextNode()) nodes.push(walk.currentNode);
   nodes.forEach(node=>{
     const val = node.nodeValue;
-    const idx = val.toLowerCase().indexOf(query.toLowerCase());
-    if(idx !== -1){
+    const q = query.toLowerCase();
+    const v = val.toLowerCase();
+    let start = v.indexOf(q);
+    if(start === -1) return;
+
+    // Para múltiplas ocorrências no mesmo nó:
+    let currentNode = node;
+    while(start !== -1){
+      const before = currentNode;
+      const after = before.splitText(start);
       const mark = document.createElement('mark');
-      mark.textContent = val.substr(idx, query.length);
-      const after = node.splitText(idx);
-      after.nodeValue = after.nodeValue.substr(query.length);
-      node.parentNode.insertBefore(mark, after);
+      mark.textContent = after.nodeValue.substring(0, query.length);
+      after.nodeValue = after.nodeValue.substring(query.length);
+      before.parentNode.insertBefore(mark, after);
+      // Próxima busca dentro do "after" restante
+      currentNode = after;
+      const rest = currentNode.nodeValue.toLowerCase();
+      start = rest.indexOf(q);
     }
   });
 }
@@ -180,12 +282,11 @@ searchInput.addEventListener('input', function(){
   const q = this.value.trim().toLowerCase();
   const items = Array.from(document.querySelectorAll('.accordion-item'));
 
-  // Show/hide clear button
+  // Mostrar/ocultar botão clear
   clearBtn.style.display = q.length ? 'block' : 'none';
 
-  // Clear old highlights
-  items.forEach(item=>clearHighlights(item));
-  items.forEach(i=>i.style.display='');
+  // Limpar highlights antigos e resetar visibilidade
+  items.forEach(item=>{ clearHighlights(item); item.style.display=''; });
 
   if(q === ''){
     document.querySelectorAll('.accordion-item.open').forEach(i=>i.classList.remove('open'));
@@ -208,7 +309,7 @@ searchInput.addEventListener('input', function(){
   }
 });
 
-// Clear search on button click
+// Botão ✖ limpa a busca
 clearBtn.addEventListener('click', ()=>{
   searchInput.value = '';
   clearBtn.style.display = 'none';
