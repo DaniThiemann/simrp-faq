@@ -66,6 +66,18 @@
     padding:12px 20px; border-radius:8px; text-decoration:none; font-weight:700;
   }
 
+  .gmail-link {
+    font-size: 13px;
+    margin-top: 6px;
+    display: block;
+    color: var(--neutral);
+  }
+  .gmail-link a {
+    font-weight: bold;
+    text-decoration: underline;
+    color: var(--neutral);
+  }
+
   @media(max-width:700px){
     body{padding:16px;}
     h1{font-size:24px;}
@@ -303,11 +315,21 @@
     </article>
   </section>
 
-  <a class="cta" href="mailto:support@igbusinessadvisors.com">Contact</a>
+  <!-- CONTACT -->
+  <a class="cta"
+     href="mailto:support@igbusinessadvisors.com?subject=SIMRP%20Plan%20Question"
+     target="_top"
+     rel="noopener">
+    Contact
+  </a>
+  <div class="gmail-link">
+    Prefer to use Gmail in your browser? <a href="https://mail.google.com/mail/?view=cm&to=support@igbusinessadvisors.com&su=SIMRP%20Plan%20Question" target="_top" rel="noopener"><strong><u>Click here</u></strong></a>.
+  </div>
+
 </div>
 
 <script>
-  /* Accordion: clique e teclado (Enter/Espaço) */
+  // Accordion: clique e teclado (Enter/Espaço)
   function toggleItem(it){
     const open = it.classList.contains('open');
     document.querySelectorAll('.accordion-item.open').forEach(i=>i.classList.remove('open'));
@@ -325,4 +347,3 @@
 </script>
 </body>
 </html>
-
