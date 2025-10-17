@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SIMRP Plan — Employee FAQ</title>
+
+<style>
+  :root{
+    --accent:#ba9c7a;
+    --base:#ffffff;
+    --neutral:#474545;
+    --radius:8px;
+    --maxw:1000px;
+  }
+  body{
+    font-family:"Helvetica",Arial,sans-serif;
+    background:var(--base);
+    color:var(--neutral);
+    margin:0;
+    padding:28px;
+    display:flex;
+    justify-content:center;
+  }
+  .container{max-width:var(--maxw);width:100%;}
+  h1{font-size:28px;margin:0 0 6px;color:var(--neutral);}
+  .subtitle{color:rgba(71,69,69,0.8);margin-bottom:18px;font-size:14px;}
+
+  .category{margin-top:32px;}
+  .category h2{font-size:16px;margin:12px 0 18px;}
+
+  /* SEARCH BAR with clear button */
+  .search {
+    position: relative;
+    margin-bottom: 14px;
+  }
+  .search input{
+    width:100%;
+    padding:11px 36px 11px 14px; /* space for the clear button */
+    border-radius:8px;
+    border:1px solid rgba(71,69,69,.12);
+    font-size:15px;
+  }
+  .clear-btn{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #888;
+    cursor: pointer;
+    display: none;
+    line-height: 1;
+  }
+  .clear-btn:hover{
+    color: var(--accent);
+  }
+
+  .accordion-item{
+    background:#faf9f8;
+    border-radius:var(--radius);
+    margin-bottom:10px;
+    overflow:hidden;
+    border:1px solid rgba(71,69,69,.08);
+    transition:transform .12s ease;
+  }
+  .acc-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 16px;
+    cursor:pointer;
+    font-weight:700;
+    user-select:none;
+  }
+  .acc-head:hover{background:rgba(186,156,122,.05);}
+  .acc-head .plus{
+    width:32px;height:32px;border-radius:6px;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--base);color:var(--accent);
+    border:1px solid rgba(0,0,0,.06);
+    transition:.18s;
+  }
+  .acc-body{
+    padding:12px 16px 18px;
+    display:none;
+    border-top:1px solid rgba(71,69,69,.04);
+  }
+  .accordion-item.open .acc-body{display:block;}
+  .accordion-item.open .plus{background:var(--accent);color:var(--base);}
+
+  ul{margin:8px 0 8px 18px;}
+  .cta{
+    display:inline-block;
+    margin-top:24px;
+    background:var(--accent);
+    color:var(--base);
+    padding:12px 20px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:700;
+  }
+
+  /* ✨ Branded highlight */
+  mark {
+    background: #f4e6d1;
+    color: #3d3d3d;
+    padding: 0 2px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+
+  @media(max-width:700px){
+    body{padding:16px;}
+    h1{font-size:24px;}
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>SIMRP Plan — Employee FAQ</h1>
+  <div class="subtitle">Quick answers to common questions about the SIMRP employee benefits program.</div>
+
+  <div class="search">
+    <input id="search" type="search" placeholder="Search questions and answers..." aria-label="Search questions and answers">
+    <button id="clearBtn" class="clear-btn" aria-label="Clear search">✖</button>
+  </div>
+
+  <!-- (Insert all your FAQ categories here as before) -->
+
+  <a class="cta" href="mailto:support@igbusinessadvisors.com">Contact HR</a>
+</div>
+
+<script>
+function toggleItem(it){
+  const open = it.classList.contains('open');
+  document.querySelectorAll('.accordion-item.open').forEach(i=>i.classList.remove('open'));
+  if(!open) it.classList.add('open');
+}
+document.querySelectorAll('.acc-head').forEach(h=>{
+  h.addEventListener('click',()=>toggleItem(h.parentElement));
+  h.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){
+      e.preventDefault();
+      toggleItem(h.parentElement);
+    }
+  });
+});
+
+function clearHighlights(element){
+  element.querySelectorAll('mark').forEach(mark=>{
+    mark.replaceWith(document.createTextNode(mark.textContent));
+  });
+}
+
+function highlightMatches(element, query){
+  if(!query) return;
+  const walk = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
+  const nodes = [];
+  while(walk.nextNode()) nodes.push(walk.currentNode);
+  nodes.forEach(node=>{
+    const val = node.nodeValue;
+    const idx = val.toLowerCase().indexOf(query.toLowerCase());
+    if(idx !== -1){
+      const mark = document.createElement('mark');
+      mark.textContent = val.substr(idx, query.length);
+      const after = node.splitText(idx);
+      after.nodeValue = after.nodeValue.substr(query.length);
+      node.parentNode.insertBefore(mark, after);
+    }
+  });
+}
+
+const searchInput = document.getElementById('search');
+const clearBtn = document.getElementById('clearBtn');
+
+searchInput.addEventListener('input', function(){
+  const q = this.value.trim().toLowerCase();
+  const items = Array.from(document.querySelectorAll('.accordion-item'));
+
+  // Show/hide clear button
+  clearBtn.style.display = q.length ? 'block' : 'none';
+
+  // Clear old highlights
+  items.forEach(item=>clearHighlights(item));
+  items.forEach(i=>i.style.display='');
+
+  if(q === ''){
+    document.querySelectorAll('.accordion-item.open').forEach(i=>i.classList.remove('open'));
+    return;
+  }
+
+  let firstMatch = null;
+  items.forEach(item=>{
+    const text = (item.textContent || '').toLowerCase();
+    const isMatch = text.includes(q);
+    item.style.display = isMatch ? '' : 'none';
+    if(isMatch && !firstMatch) firstMatch = item;
+    if(isMatch) highlightMatches(item, q);
+  });
+
+  if(firstMatch){
+    document.querySelectorAll('.accordion-item.open').forEach(i=>i.classList.remove('open'));
+    firstMatch.classList.add('open');
+    firstMatch.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+});
+
+// Clear search on button click
+clearBtn.addEventListener('click', ()=>{
+  searchInput.value = '';
+  clearBtn.style.display = 'none';
+  const items = Array.from(document.querySelectorAll('.accordion-item'));
+  items.forEach(item=>{
+    item.style.display='';
+    clearHighlights(item);
+    item.classList.remove('open');
+  });
+  searchInput.focus();
+});
+</script>
+</body>
+</html>
