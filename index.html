@@ -26,15 +26,15 @@
   h1{font-size:28px;margin:0 0 6px;color:var(--neutral);}
   .subtitle{color:rgba(71,69,69,0.8);margin-bottom:18px;font-size:14px;}
 
-  /* Espaço extra entre o título da categoria e as caixas */
+  /* Category spacing */
   .category{margin-top:32px;}
   .category h2{font-size:16px;margin:12px 0 18px;}
 
-  /* SEARCH BAR com botão clear */
+  /* SEARCH with clear button */
   .search{ position:relative; margin-bottom:14px; }
   .search input{
     width:100%;
-    padding:11px 36px 11px 14px; /* espaço pro clear */
+    padding:11px 36px 11px 14px;
     border-radius:8px;
     border:1px solid rgba(71,69,69,.12);
     font-size:15px;
@@ -80,7 +80,7 @@
     padding:12px 20px; border-radius:8px; text-decoration:none; font-weight:700;
   }
 
-  /* Highlight com paleta da marca */
+  /* Branded highlight */
   mark {
     background:#f4e6d1; color:#3d3d3d;
     padding:0 2px; border-radius:3px; font-weight:600;
@@ -127,32 +127,35 @@
   <section class="category" id="coverage">
     <h2>Coverage & Benefits</h2>
 
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Does this replace my health insurance?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>No. This is not a replacement for your health insurance. These benefits stack on top of and complement anything you already have in place. If an employee does not have insurance, this can act as a stand-alone.</p></div>
+    </article>
+
     <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">What’s included in the plan?</div><div class="plus">+</div></div>
       <div class="acc-body">
         <ul>
           <li>Virtual Urgent Care – Unlimited</li>
           <li>Virtual Primary Care – 12 visits per enrolled household member per year</li>
-          <li>Prescription Coverage – Most common prescriptions at no cost (1,000+ covered)</li>
+          <li>Prescription Coverage – Unlimited for most common prescriptions at no cost</li>
           <li>Mental Health Counseling – 12 visits per enrolled household member per year</li>
           <li>Additional wellness resources through the benefits platform</li>
         </ul>
       </div>
     </article>
 
-    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Potential additional benefits (if tax savings permit)</div><div class="plus">+</div></div>
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">What kind of prescriptions are included?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>Most common prescriptions (1,000+) are covered at no cost. Specialty or brand-only drugs may vary based on availability.</p></div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Potential benefits for employees enrolled</div><div class="plus">+</div></div>
       <div class="acc-body">
-        <p>Subject to sufficient tax savings, employees enrolled may receive:</p>
         <ul>
           <li>MEC plan offering 3 in-person primary care visits per year*</li>
           <li>Hospital bill eraser*</li>
-          <li>Group whole life insurance policy to fully subsidize the enrolled employee*</li>
+          <li>Group whole life insurance policy*</li>
         </ul>
-        <p><em>*Applied only if enough tax savings are realized.</em></p>
+        <p><em>*Applicable if enough tax savings are realized. In some cases, the whole life policy may fully subsidize the enrolled employee.</em></p>
       </div>
-    </article>
-
-    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">What kind of prescriptions are included?</div><div class="plus">+</div></div>
-      <div class="acc-body"><p>Most common prescriptions (1,000+) are covered at no cost. Specialty or brand-only drugs may vary based on availability.</p></div>
     </article>
 
     <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Will I get an insurance card?</div><div class="plus">+</div></div>
@@ -161,6 +164,18 @@
 
     <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Do I have to use certain doctors or providers?</div><div class="plus">+</div></div>
       <div class="acc-body"><p>No. Virtual services are available nationwide and not limited to a specific network.</p></div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Can I use these benefits if I move to another state?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>Yes. These benefits are available nationwide.</p></div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Can I use these benefits while traveling?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>Yes. Virtual visits and prescription coverage are available anywhere in the U.S., even if you’re away from your home state.</p></div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Do the benefits expire at the end of the year?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>No. These benefits continue as long as you remain enrolled and your employer keeps the program in place.</p></div>
     </article>
   </section>
 
@@ -175,14 +190,6 @@
     <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Can I change my dependents during the year?</div><div class="plus">+</div></div>
       <div class="acc-body"><p>Yes. You can update dependents during open enrollment or after a qualifying life event (marriage, birth, adoption, etc.).</p></div>
     </article>
-
-    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Can I continue my life insurance policy if I leave the company?</div><div class="plus">+</div></div>
-      <div class="acc-body"><p>Yes, you can opt into paying out-of-pocket to continue the policy. Most employees choose to continue due to the cash accrual acting as a savings account.</p></div>
-    </article>
-
-    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">What happens if I leave the company?</div><div class="plus">+</div></div>
-      <div class="acc-body"><p>Your coverage under this plan will end when your employment ends, unless your new employer offers a similar program.</p></div>
-    </article>
   </section>
 
   <!-- ACCESS & USAGE -->
@@ -193,16 +200,8 @@
       <div class="acc-body"><p>No complicated paperwork is required. You will be auto-enrolled in our program.</p></div>
     </article>
 
-    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Can I use these benefits if I move to another state?</div><div class="plus">+</div></div>
-      <div class="acc-body"><p>Yes. These benefits are available nationwide and virtual services and prescription coverage are available across the U.S.</p></div>
-    </article>
-
-    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Can I use these benefits while traveling?</div><div class="plus">+</div></div>
-      <div class="acc-body"><p>Yes. Virtual visits and prescription coverage are available anywhere in the U.S., even if you’re away from your home state.</p></div>
-    </article>
-
     <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Do I need internet access to use the benefits?</div><div class="plus">+</div></div>
-      <div class="acc-body"><p>For virtual services, yes — either internet or a phone connection is needed. For in-person MEC plan visits, internet access is not required.</p></div>
+      <div class="acc-body"><p>For virtual services, yes — either internet or a phone connection is needed. For in-person MEC plan visits, internet access isn’t required.</p></div>
     </article>
   </section>
 
@@ -210,16 +209,20 @@
   <section class="category" id="legal">
     <h2>Legal, Privacy & Accounts</h2>
 
-    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Will my personal health information be shared with my employer?</div><div class="plus">+</div></div>
-      <div class="acc-body"><p>No. Your medical details are confidential and protected under HIPAA. Your employer sees general participation data, not private health records.</p></div>
-    </article>
-
     <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Does this affect my eligibility for HSA or FSA accounts?</div><div class="plus">+</div></div>
       <div class="acc-body"><p>No. This plan works alongside HSAs and FSAs and doesn’t interfere with your contributions or usage. If you have an HSA account, we will ensure you are enrolled properly to avoid disrupting anything.</p></div>
     </article>
 
-    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Do the benefits expire at the end of the year?</div><div class="plus">+</div></div>
-      <div class="acc-body"><p>No. These benefits continue as long as you remain enrolled and your employer keeps the program in place.</p></div>
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Will my personal health information be shared with my employer?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>No. Your medical details are confidential and protected under HIPAA. Your employer sees general participation data, not private health records.</p></div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">What happens if I leave the company?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>Your coverage under this plan will end when your employment ends, unless your new employer offers a similar program.</p></div>
+    </article>
+
+    <article class="accordion-item"><div class="acc-head" tabindex="0"><div class="title">Can I continue my life insurance policy if I leave the company?</div><div class="plus">+</div></div>
+      <div class="acc-body"><p>Yes, you can opt into paying out-of-pocket to continue the policy. Most employees choose to continue due to the cash accrual acting as a savings account.</p></div>
     </article>
   </section>
 
@@ -242,30 +245,26 @@ document.querySelectorAll('.acc-head').forEach(h=>{
   });
 });
 
-/* Limpa <mark> existentes */
+/* Clear <mark> */
 function clearHighlights(element){
   element.querySelectorAll('mark').forEach(mark=>{
     mark.replaceWith(document.createTextNode(mark.textContent));
   });
 }
 
-/* Destaca TODAS as ocorrências no item */
+/* Highlight ALL occurrences within an item */
 function highlightMatches(element, query){
   if(!query) return;
   const walk = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
   const nodes = [];
   while(walk.nextNode()) nodes.push(walk.currentNode);
-
   nodes.forEach(node=>{
     let text = node.nodeValue;
     if(!text) return;
     let lower = text.toLowerCase();
     const q = query.toLowerCase();
-
     let idx = lower.indexOf(q);
     if(idx === -1) return;
-
-    // percorre múltiplas ocorrências no mesmo nó
     let current = node;
     while(idx !== -1){
       const before = current;
@@ -288,10 +287,10 @@ searchInput.addEventListener('input', function(){
   const q = this.value.trim().toLowerCase();
   const items = Array.from(document.querySelectorAll('.accordion-item'));
 
-  // Mostrar/ocultar botão clear
+  // Toggle clear button visibility
   clearBtn.style.display = q.length ? 'block' : 'none';
 
-  // Limpa destaques anteriores e reseta visibilidade
+  // Clear old highlights & reset visibility
   items.forEach(item=>{ clearHighlights(item); item.style.display=''; });
 
   if(q === ''){
@@ -315,7 +314,7 @@ searchInput.addEventListener('input', function(){
   }
 });
 
-// Botão ✖ limpa a busca
+// Clear button
 clearBtn.addEventListener('click', ()=>{
   searchInput.value = '';
   clearBtn.style.display = 'none';
